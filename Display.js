@@ -27,7 +27,7 @@ class Display {
     }
 
     compute(type) {
-        this.typeOperation !== 'equal' && this.calcular();
+        this.typeOperation !== 'equal' && this.calculate();
         this.typeOperation = type;
         this.valueBefore = this.valueActual || this.valueBefore;
         this.valueActual = '';
@@ -46,10 +46,11 @@ class Display {
     }
 
     calculate() {
-        const valueBefore = parseFloat(this.valueBefore);
-        const valueActual = parseFloat(this.valueActual);
-
+       const valueBefore = parseFloat(this.valueBefore);
+       const valueActual = parseFloat(this.valueActual);
+        
         if(isNaN(valueActual) || isNaN(valueBefore)) return 
+        console.log(this.valueBefore, this.valueActual)
         this.valueActual = this.calcular[this.typeOperation](valueBefore, valueActual);
     }
 }

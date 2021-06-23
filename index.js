@@ -11,5 +11,8 @@ buttonNumbers.forEach(button => {
 });
 
 buttonOperators.forEach(button => {
-    button.addEventListener('click', () => display.compute(button.value));
+    button.addEventListener('click', () => 
+    {
+        console.log(button.value);
+        display.compute(button.value)});
 })
